@@ -3,573 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Amer's Computer Science portfolio, exploring programming, cybersecurity, and cloud engineering.">
 <title>Amer | Computer Science Portfolio</title>
-
-<meta name="description"
-content="Explore Amer's Computer Science journey, programming projects, and interests in cybersecurity, cloud engineering and networking.">
-
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-html {
-scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
-font-family: Arial, Helvetica, sans-serif;
-background: #080d19;
+font-family: Arial, sans-serif;
+background: #0b1120;
 color: #e5e7eb;
 line-height: 1.7;
 }
-
-a {
-color: inherit;
-text-decoration: none;
-}
-
-.container {
-width: 88%;
-max-width: 1100px;
-margin: auto;
-}
-
-header {
-position: sticky;
-top: 0;
-z-index: 10;
-background: rgba(8, 13, 25, 0.95);
-border-bottom: 1px solid #1e293b;
-padding: 20px 0;
-}
-
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 20px;
-flex-wrap: wrap;
-}
-
-.logo {
-font-size: 1.5rem;
-font-weight: bold;
-color: #60a5fa;
-}
-
-nav ul {
-display: flex;
-gap: 22px;
-list-style: none;
-flex-wrap: wrap;
-}
-
-nav ul a {
-color: #cbd5e1;
-font-size: 0.92rem;
-}
-
-nav ul a:hover {
-color: #60a5fa;
-}
-
-.hero {
-padding: 110px 0 95px;
-}
-
-.badge {
-display: inline-block;
-color: #93c5fd;
-background: #111d32;
-border: 1px solid #263d60;
-padding: 7px 14px;
-border-radius: 30px;
-font-size: 0.85rem;
-margin-bottom: 25px;
-}
-
-h1 {
-font-size: clamp(2.7rem, 7vw, 5rem);
-line-height: 1.12;
-letter-spacing: -2px;
-margin-bottom: 25px;
-}
-
-.accent {
-color: #60a5fa;
-}
-
-.hero p {
-max-width: 700px;
-color: #a8b4c7;
-font-size: 1.1rem;
-margin-bottom: 30px;
-}
-
-.button {
-display: inline-block;
-background: #2563eb;
-color: white;
-padding: 12px 20px;
-border-radius: 8px;
-margin: 5px 8px 5px 0;
-font-weight: bold;
-}
-
-.button:hover {
-background: #1d4ed8;
-}
-
-.button-outline {
-background: transparent;
-border: 1px solid #475569;
-}
-
-.button-outline:hover {
-background: #17243a;
-}
-
-section {
-padding: 75px 0;
-border-top: 1px solid #1e293b;
-}
-
-.section-label {
-color: #60a5fa;
-font-size: 0.85rem;
-text-transform: uppercase;
-letter-spacing: 2px;
-margin-bottom: 10px;
-}
-
-.section-title {
-font-size: clamp(1.8rem, 4vw, 2.5rem);
-margin-bottom: 15px;
-}
-
-.section-description {
-color: #a8b4c7;
-max-width: 720px;
-margin-bottom: 35px;
-}
-
-.about-box {
-background: #101827;
-border: 1px solid #243247;
-border-radius: 16px;
-padding: 30px;
-}
-
-.about-box p {
-color: #c0cad8;
-margin-bottom: 16px;
-}
-
-.about-box p:last-child {
-margin-bottom: 0;
-}
-
-.grid {
-display: grid;
-grid-template-columns: repeat(
-auto-fit, minmax(240px, 1fr)
-);
-gap: 20px;
-}
-
-.card {
-background: #101827;
-border: 1px solid #243247;
-border-radius: 14px;
-padding: 26px;
-transition: transform 0.2s, border-color 0.2s;
-}
-
-.card:hover {
-transform: translateY(-4px);
-border-color: #3b82f6;
-}
-
-.card h3 {
-color: #93c5fd;
-font-size: 1.2rem;
-margin-bottom: 12px;
-}
-
-.card p {
-color: #b4c0d0;
-font-size: 0.96rem;
-}
-
-.project-type {
-display: inline-block;
-color: #86efac;
-font-size: 0.8rem;
-margin-bottom: 12px;
-}
-
-.tags {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-}
-
-.tag {
-background: #142238;
-border: 1px solid #2c405b;
-color: #bfdbfe;
-border-radius: 7px;
-padding: 8px 13px;
-font-size: 0.9rem;
-}
-
-.note {
-color: #94a3b8;
-font-size: 0.9rem;
-margin-top: 22px;
-}
-
-.contact-box {
-background: #101827;
-border: 1px solid #243247;
-border-radius: 16px;
-padding: 32px;
-}
-
-.contact-box p {
-color: #b4c0d0;
-margin-bottom: 20px;
-}
-
-footer {
-text-align: center;
-padding: 30px 0;
-border-top: 1px solid #1e293b;
-color: #94a3b8;
-font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-.hero {
-padding: 75px 0;
-}
-
-nav ul {
-gap: 13px;
-}
-
-.about-box,
-.contact-box {
-padding: 22px;
-}
-}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1000px, 90%); margin: auto; }
+header { padding: 22px 0; border-bottom: 1px solid #263247; }
+nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+.logo { color: #67e8f9; font-weight: bold; font-size: 1.3rem; }
+nav ul { display: flex; list-style: none; gap: 20px; flex-wrap: wrap; }
+nav a:hover { color: #67e8f9; }
+.hero { padding: 95px 0; }
+.tag { color: #67e8f9; text-transform: uppercase; letter-spacing: 2px; font-size: .85rem; }
+h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.15; margin: 18px 0; }
+h1 span { color: #67e8f9; }
+.intro { max-width: 680px; color: #aab6ca; font-size: 1.1rem; }
+.buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.button { display: inline-block; padding: 11px 20px; border: 1px solid #67e8f9; border-radius: 7px; color: #67e8f9; }
+.primary { background: #67e8f9; color: #0b1120; font-weight: bold; }
+section { padding: 60px 0; border-top: 1px solid #263247; }
+h2 { font-size: 2rem; margin-bottom: 22px; }
+.about { max-width: 780px; color: #aab6ca; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.card { background: #111c30; border: 1px solid #263247; border-radius: 12px; padding: 23px; }
+.card h3 { color: #67e8f9; margin-bottom: 10px; }
+.card p { color: #aab6ca; }
+.label { color: #67e8f9; font-size: .8rem; margin-bottom: 10px; display: inline-block; }
+footer { border-top: 1px solid #263247; padding: 24px 0; text-align: center; color: #8492a8; }
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="container">
 <nav>
-<a href="#home" class="logo">Adham.</a>
-
+<a class="logo" href="#home">Amer.dev</a>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#interests">Interests</a></li>
-<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </div>
 </header>
 
 <main>
-
-<!-- HERO -->
-
 <section class="hero" id="home">
 <div class="container">
-
-<span class="badge">
-Computer Science Student | Aspiring Technologist
-</span>
-
-<h1>
-Hi, I'm Adham.<br>
-I want to understand<br>
-<span class="accent">how technology works.</span>
-</h1>
-
-<p>
-I'm developing my knowledge of Computer Science
-with a particular interest in cybersecurity,
-cloud engineering and computer networks.
-I enjoy exploring how digital systems work,
-how they communicate and how they can be secured.
+<p class="tag">Computer Science Student</p>
+<h1>Hello, I'm <span>Amer.</span></h1>
+<p class="intro">
+I am developing my knowledge of computer science,
+programming, cybersecurity, and cloud engineering.
+I enjoy solving problems, understanding how technology
+works, and turning what I learn into practical projects.
 </p>
-
-<a href="#projects" class="button">
-Explore My Projects
-</a>
-
-<a href="#about" class="button button-outline">
-Discover My Journey
-</a>
-
+<div class="buttons">
+<a class="button primary" href="#projects">Explore My Work</a>
+<a class="button" href="#about">About Me</a>
+</div>
 </div>
 </section>
-
-<!-- ABOUT -->
 
 <section id="about">
 <div class="container">
-
-<p class="section-label">Introduction</p>
-
-<h2 class="section-title">Beyond the Classroom</h2>
-
-<p class="section-description">
-My goal is to turn curiosity into practical
-technical knowledge through study, experimentation
-and project development.
+<h2>About Me</h2>
+<p class="about">
+I am building a strong foundation in computer science
+through mathematics, programming, and independent study.
+I am particularly interested in how software, networks,
+and secure systems work together. My goal is to keep
+learning, build practical skills, and prepare for
+further study in computer science.
 </p>
-
-<div class="about-box">
-
-<p>
-I am a Computer Science student building a
-strong foundation in programming, mathematical
-reasoning, computational logic and problem-solving.
-I am particularly interested in understanding
-the principles behind the technologies we use
-every day.
-</p>
-
-<p>
-Cybersecurity and cloud engineering interest
-me because they bring together software,
-networking, infrastructure and critical thinking.
-I want to understand not only how systems are
-built, but also how they can be made more
-reliable and secure.
-</p>
-
-<p>
-I am currently developing my technical skills
-through structured learning and practical work.
-This portfolio documents my progress, the
-projects I build and the lessons I learn
-along the way.
-</p>
-
-</div>
 </div>
 </section>
-
-<!-- INTERESTS -->
 
 <section id="interests">
 <div class="container">
-
-<p class="section-label">What Drives Me</p>
-
-<h2 class="section-title">Technical Interests</h2>
-
-<p class="section-description">
-Three areas I am especially interested in exploring
-through further study and hands-on practice.
-</p>
-
+<h2>Areas of Interest</h2>
 <div class="grid">
-
 <article class="card">
-<h3>01 / Cybersecurity</h3>
-
+<h3>Cybersecurity</h3>
 <p>
-Understanding security principles,
-network vulnerabilities, threat detection
-and the techniques used to protect
-computer systems.
+Exploring network security, defensive security,
+threat awareness, and the fundamentals of protecting
+digital systems.
 </p>
 </article>
-
 <article class="card">
-<h3>02 / Cloud Engineering</h3>
-
+<h3>Cloud Engineering</h3>
 <p>
-Exploring cloud infrastructure,
-virtualisation, distributed computing
-and the systems that make modern
-digital services possible.
+Learning about cloud infrastructure, networking,
+virtual machines, and reliable online services.
 </p>
 </article>
-
 <article class="card">
-<h3>03 / Networking</h3>
-
+<h3>Programming</h3>
 <p>
-Learning how devices communicate through
-networks, how routing works and how
-network architecture supports secure
-and reliable systems.
+Developing problem-solving skills and learning to
+write clear, structured code through exercises
+and personal projects.
 </p>
 </article>
-
 </div>
 </div>
 </section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-<div class="container">
-
-<p class="section-label">My Development</p>
-
-<h2 class="section-title">Skills & Foundations</h2>
-
-<p class="section-description">
-The foundations I am developing as I progress
-in Computer Science.
-</p>
-
-<div class="tags">
-<span class="tag">HTML</span>
-<span class="tag">Programming Fundamentals</span>
-<span class="tag">C++ Fundamentals</span>
-<span class="tag">Mathematical Problem-Solving</span>
-<span class="tag">Computational Logic</span>
-<span class="tag">Cybersecurity Fundamentals</span>
-<span class="tag">Computer Networking</span>
-<span class="tag">Cloud Technologies</span>
-</div>
-
-<p class="note">
-My skills are developing through study and practice.
-I aim to demonstrate my progress through practical
-projects rather than simply listing technologies.
-</p>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
 
 <section id="projects">
 <div class="container">
-
-<p class="section-label">Learning by Building</p>
-
-<h2 class="section-title">Projects & Experiments</h2>
-
-<p class="section-description">
-Each project is an opportunity to apply concepts,
-solve problems and learn something new.
-</p>
-
+<h2>Projects and Learning</h2>
 <div class="grid">
-
 <article class="card">
-<span class="project-type">
-Current Project
-</span>
-
-<h3>Personal Portfolio Website</h3>
-
+<span class="label">Web Development</span>
+<h3>Personal Portfolio</h3>
 <p>
-My first web development project, created
-with HTML and CSS and published using
-GitHub Pages. It introduces me to web
-structure, source code, version control
-and publishing a website online.
+A personal website built with HTML and CSS to
+practise web development and present my learning
+journey.
 </p>
 </article>
-
 <article class="card">
-<span class="project-type">
-Planned Project
-</span>
-
-<h3>Programming Problem Solver</h3>
-
+<span class="label">In Progress</span>
+<h3>Python Projects</h3>
 <p>
-A small program that solves a practical
-problem using programming fundamentals.
-I plan to document its logic, implementation
-and improvements as I develop my skills.
+Building programming fundamentals through small
+Python exercises, logical thinking, and problem
+solving.
 </p>
 </article>
-
 <article class="card">
-<span class="project-type">
-Planned Project
-</span>
-
-<h3>Network Security Lab</h3>
-
+<span class="label">Learning Goals</span>
+<h3>Networking and Security</h3>
 <p>
-A controlled learning environment for
-exploring network traffic, security
-concepts and defensive analysis using
-authorised tools and test systems.
+Developing my understanding of computer networks,
+security principles, and cloud technologies.
 </p>
 </article>
-
-</div>
-
-<p class="note">
-Planned projects are labelled honestly and will
-be updated as I build and test them.
-</p>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-<div class="container">
-
-<p class="section-label">Get in Touch</p>
-
-<h2 class="section-title">
-Always Learning. Always Building.
-</h2>
-
-<div class="contact-box">
-
-<p>
-I am interested in learning from the wider
-Computer Science community and exploring
-opportunities to develop my technical skills.
-</p>
-
-<a
-href="https://github.com/pradwol"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-Visit My GitHub
-</a>
-
 </div>
 </div>
 </section>
-
 </main>
 
 <footer>
 <div class="container">
-<p>
-&copy; Built with HTML and CSS.
-</p>
+<p>Built with HTML and CSS | 2026</p>
+<p>Learning, building, and improving every day.</p>
 </div>
 </footer>
-
 </body>
 </html>
+
