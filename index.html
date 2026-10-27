@@ -1,11 +1,575 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My First Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amer | Computer Science Portfolio</title>
+
+<meta name="description"
+content="Explore Amer's Computer Science journey, programming projects, and interests in cybersecurity, cloud engineering and networking.">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #080d19;
+color: #e5e7eb;
+line-height: 1.7;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+.container {
+width: 88%;
+max-width: 1100px;
+margin: auto;
+}
+
+header {
+position: sticky;
+top: 0;
+z-index: 10;
+background: rgba(8, 13, 25, 0.95);
+border-bottom: 1px solid #1e293b;
+padding: 20px 0;
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.logo {
+font-size: 1.5rem;
+font-weight: bold;
+color: #60a5fa;
+}
+
+nav ul {
+display: flex;
+gap: 22px;
+list-style: none;
+flex-wrap: wrap;
+}
+
+nav ul a {
+color: #cbd5e1;
+font-size: 0.92rem;
+}
+
+nav ul a:hover {
+color: #60a5fa;
+}
+
+.hero {
+padding: 110px 0 95px;
+}
+
+.badge {
+display: inline-block;
+color: #93c5fd;
+background: #111d32;
+border: 1px solid #263d60;
+padding: 7px 14px;
+border-radius: 30px;
+font-size: 0.85rem;
+margin-bottom: 25px;
+}
+
+h1 {
+font-size: clamp(2.7rem, 7vw, 5rem);
+line-height: 1.12;
+letter-spacing: -2px;
+margin-bottom: 25px;
+}
+
+.accent {
+color: #60a5fa;
+}
+
+.hero p {
+max-width: 700px;
+color: #a8b4c7;
+font-size: 1.1rem;
+margin-bottom: 30px;
+}
+
+.button {
+display: inline-block;
+background: #2563eb;
+color: white;
+padding: 12px 20px;
+border-radius: 8px;
+margin: 5px 8px 5px 0;
+font-weight: bold;
+}
+
+.button:hover {
+background: #1d4ed8;
+}
+
+.button-outline {
+background: transparent;
+border: 1px solid #475569;
+}
+
+.button-outline:hover {
+background: #17243a;
+}
+
+section {
+padding: 75px 0;
+border-top: 1px solid #1e293b;
+}
+
+.section-label {
+color: #60a5fa;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 10px;
+}
+
+.section-title {
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+margin-bottom: 15px;
+}
+
+.section-description {
+color: #a8b4c7;
+max-width: 720px;
+margin-bottom: 35px;
+}
+
+.about-box {
+background: #101827;
+border: 1px solid #243247;
+border-radius: 16px;
+padding: 30px;
+}
+
+.about-box p {
+color: #c0cad8;
+margin-bottom: 16px;
+}
+
+.about-box p:last-child {
+margin-bottom: 0;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(
+auto-fit, minmax(240px, 1fr)
+);
+gap: 20px;
+}
+
+.card {
+background: #101827;
+border: 1px solid #243247;
+border-radius: 14px;
+padding: 26px;
+transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+transform: translateY(-4px);
+border-color: #3b82f6;
+}
+
+.card h3 {
+color: #93c5fd;
+font-size: 1.2rem;
+margin-bottom: 12px;
+}
+
+.card p {
+color: #b4c0d0;
+font-size: 0.96rem;
+}
+
+.project-type {
+display: inline-block;
+color: #86efac;
+font-size: 0.8rem;
+margin-bottom: 12px;
+}
+
+.tags {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.tag {
+background: #142238;
+border: 1px solid #2c405b;
+color: #bfdbfe;
+border-radius: 7px;
+padding: 8px 13px;
+font-size: 0.9rem;
+}
+
+.note {
+color: #94a3b8;
+font-size: 0.9rem;
+margin-top: 22px;
+}
+
+.contact-box {
+background: #101827;
+border: 1px solid #243247;
+border-radius: 16px;
+padding: 32px;
+}
+
+.contact-box p {
+color: #b4c0d0;
+margin-bottom: 20px;
+}
+
+footer {
+text-align: center;
+padding: 30px 0;
+border-top: 1px solid #1e293b;
+color: #94a3b8;
+font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+.hero {
+padding: 75px 0;
+}
+
+nav ul {
+gap: 13px;
+}
+
+.about-box,
+.contact-box {
+padding: 22px;
+}
+}
+</style>
 </head>
+
 <body>
-<h1>Welcome to my website!</h1>
-<p>My name is Adham, and I am learning Computer Science.</p>
-<p>I am interested in Cloud Engineering and Cybersecurity.</p>
+
+<header>
+<div class="container">
+<nav>
+<a href="#home" class="logo">Adham.</a>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#interests">Interests</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+
+<span class="badge">
+Computer Science Student | Aspiring Technologist
+</span>
+
+<h1>
+Hi, I'm Adham.<br>
+I want to understand<br>
+<span class="accent">how technology works.</span>
+</h1>
+
+<p>
+I'm developing my knowledge of Computer Science
+with a particular interest in cybersecurity,
+cloud engineering and computer networks.
+I enjoy exploring how digital systems work,
+how they communicate and how they can be secured.
+</p>
+
+<a href="#projects" class="button">
+Explore My Projects
+</a>
+
+<a href="#about" class="button button-outline">
+Discover My Journey
+</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container">
+
+<p class="section-label">Introduction</p>
+
+<h2 class="section-title">Beyond the Classroom</h2>
+
+<p class="section-description">
+My goal is to turn curiosity into practical
+technical knowledge through study, experimentation
+and project development.
+</p>
+
+<div class="about-box">
+
+<p>
+I am a Computer Science student building a
+strong foundation in programming, mathematical
+reasoning, computational logic and problem-solving.
+I am particularly interested in understanding
+the principles behind the technologies we use
+every day.
+</p>
+
+<p>
+Cybersecurity and cloud engineering interest
+me because they bring together software,
+networking, infrastructure and critical thinking.
+I want to understand not only how systems are
+built, but also how they can be made more
+reliable and secure.
+</p>
+
+<p>
+I am currently developing my technical skills
+through structured learning and practical work.
+This portfolio documents my progress, the
+projects I build and the lessons I learn
+along the way.
+</p>
+
+</div>
+</div>
+</section>
+
+<!-- INTERESTS -->
+
+<section id="interests">
+<div class="container">
+
+<p class="section-label">What Drives Me</p>
+
+<h2 class="section-title">Technical Interests</h2>
+
+<p class="section-description">
+Three areas I am especially interested in exploring
+through further study and hands-on practice.
+</p>
+
+<div class="grid">
+
+<article class="card">
+<h3>01 / Cybersecurity</h3>
+
+<p>
+Understanding security principles,
+network vulnerabilities, threat detection
+and the techniques used to protect
+computer systems.
+</p>
+</article>
+
+<article class="card">
+<h3>02 / Cloud Engineering</h3>
+
+<p>
+Exploring cloud infrastructure,
+virtualisation, distributed computing
+and the systems that make modern
+digital services possible.
+</p>
+</article>
+
+<article class="card">
+<h3>03 / Networking</h3>
+
+<p>
+Learning how devices communicate through
+networks, how routing works and how
+network architecture supports secure
+and reliable systems.
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<div class="container">
+
+<p class="section-label">My Development</p>
+
+<h2 class="section-title">Skills & Foundations</h2>
+
+<p class="section-description">
+The foundations I am developing as I progress
+in Computer Science.
+</p>
+
+<div class="tags">
+<span class="tag">HTML</span>
+<span class="tag">Programming Fundamentals</span>
+<span class="tag">C++ Fundamentals</span>
+<span class="tag">Mathematical Problem-Solving</span>
+<span class="tag">Computational Logic</span>
+<span class="tag">Cybersecurity Fundamentals</span>
+<span class="tag">Computer Networking</span>
+<span class="tag">Cloud Technologies</span>
+</div>
+
+<p class="note">
+My skills are developing through study and practice.
+I aim to demonstrate my progress through practical
+projects rather than simply listing technologies.
+</p>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+<div class="container">
+
+<p class="section-label">Learning by Building</p>
+
+<h2 class="section-title">Projects & Experiments</h2>
+
+<p class="section-description">
+Each project is an opportunity to apply concepts,
+solve problems and learn something new.
+</p>
+
+<div class="grid">
+
+<article class="card">
+<span class="project-type">
+Current Project
+</span>
+
+<h3>Personal Portfolio Website</h3>
+
+<p>
+My first web development project, created
+with HTML and CSS and published using
+GitHub Pages. It introduces me to web
+structure, source code, version control
+and publishing a website online.
+</p>
+</article>
+
+<article class="card">
+<span class="project-type">
+Planned Project
+</span>
+
+<h3>Programming Problem Solver</h3>
+
+<p>
+A small program that solves a practical
+problem using programming fundamentals.
+I plan to document its logic, implementation
+and improvements as I develop my skills.
+</p>
+</article>
+
+<article class="card">
+<span class="project-type">
+Planned Project
+</span>
+
+<h3>Network Security Lab</h3>
+
+<p>
+A controlled learning environment for
+exploring network traffic, security
+concepts and defensive analysis using
+authorised tools and test systems.
+</p>
+</article>
+
+</div>
+
+<p class="note">
+Planned projects are labelled honestly and will
+be updated as I build and test them.
+</p>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+
+<p class="section-label">Get in Touch</p>
+
+<h2 class="section-title">
+Always Learning. Always Building.
+</h2>
+
+<div class="contact-box">
+
+<p>
+I am interested in learning from the wider
+Computer Science community and exploring
+opportunities to develop my technical skills.
+</p>
+
+<a
+href="https://github.com/pradwol"
+class="button"
+target="_blank"
+rel="noopener noreferrer">
+Visit My GitHub
+</a>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<p>
+&copy; 2026 Adham. Built with HTML and CSS.
+</p>
+</div>
+</footer>
+
 </body>
 </html>
